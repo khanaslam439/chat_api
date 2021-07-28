@@ -63,13 +63,13 @@ export default class Chat extends Component {
     }
 
     componentWillMount(){
-        fetch('http://localhost:5000/whatsapp')
+        fetch('/whatsapp')
         .then(res => res.json())
         .then(data => this.setState({ chatHistory: data }))
     }
 
     componentWillUpdate(){
-        fetch('http://localhost:5000/whatsapp')
+        fetch('/whatsapp')
         .then(res => res.json())
         .then(data => this.setState({ chatHistory: data }))
 
@@ -141,7 +141,7 @@ export default class Chat extends Component {
                         <div className="modal-dialog">
                             <div className="modal-content">
                                 <div className="modal-body p-5">
-                                    <form action="http://localhost:5000/api" method="post">
+                                    <form action="/api" method="post">
                                         <div className="mb-3">
                                             <label>Broadcast Title</label>
                                             <input className="form-control" type="text" id="c_name" name="c_name" />
