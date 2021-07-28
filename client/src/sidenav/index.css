@@ -1,0 +1,34 @@
+.navlist{
+    width: 220px;
+    background-color: #eee;
+    height: calc(100vh - 58px);
+}
+
+.navlist li a{
+    display: flex;
+    padding: .75rem 1.5rem;
+    font-size: 13px;
+    font-weight: 600;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.navlist li a:hover{
+    background-color: #0001;
+}
+
+
+.navlist li a *{
+    color: #000;
+}
+
+.navlist li a i{
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+
+
+.navlist{
+    
+}

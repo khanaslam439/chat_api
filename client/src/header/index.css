@@ -1,0 +1,29 @@
+.fs-large{
+    font-size: x-large;
+    margin:0 .5rem;
+}
+
+.nav-bg{
+    background-color: royalblue;
+}
+
+.nav-bg .navbar-nav > li > a{
+    margin:0 .5rem;
+    font-weight: bold;
+}
+
+.nav-bg .navbar-nav > li > a i{
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.nav-bg .dropdown-item{
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+}
+.nav-bg .dropdown-item > i{
+    font-size: 1.25rem;
+    width: 30px;
+    display: inline-block;
+}
