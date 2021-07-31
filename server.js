@@ -111,8 +111,8 @@ app.post('/api', function(req,res){
     res.json(data)
 })
 
-// const path = require('path');  
-// app.use(express.static(path.join(__dirname, 'client', 'build')));
+const path = require('path');  
+app.use(express.static(path.join(__dirname, 'client', 'build')));
 
 
 const port = process.env.PORT || 5000;
