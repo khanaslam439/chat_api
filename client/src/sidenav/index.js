@@ -21,7 +21,7 @@ export default class Sidenav extends Component {
                 <li>
                     <Link to='/reservation'>
                         <i className="bi bi-card-checklist me-3"></i>
-                        <span>Reesrvation</span>
+                        <span>Reservation</span>
                     </Link>
                 </li>
                 <li>

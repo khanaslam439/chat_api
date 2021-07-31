@@ -1,7 +1,7 @@
 // Send message using promise
 
-var accountSid = process.env.TWILIO_ACCOUNT_SID;
-var token = process.env.TWILIO_AUTH_TOKEN;
+var accountSid = 'AC6eb3b9f4c3df619f19bccde964c35c1f';
+var token = 'a925db9c8e5cc5afa70a5bf7b7d4dfdb';
 
 const client = require('twilio')(accountSid, token, {
     lazyLoading: true
