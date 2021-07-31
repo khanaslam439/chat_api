@@ -6,7 +6,7 @@ export default class Reservation extends Component {
         allReply: []
     }
     componentDidMount(){
-        fetch('http://localhost:5000/reservation')
+        fetch('/register')
         .then(res => res.json())
         .then(data => this.setState({ allReply: data}))
     }

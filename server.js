@@ -82,7 +82,7 @@ app.post('/whatsapp', async (req, res) => {
         res.json(data);
         
     });
-    app.get('/reservation', cors(),  function(req,res){
+    app.get('/register', cors(),  function(req,res){
         if(tempSender == senderID && name != '' && phone != '' && no_of_guest != '' && message != '' && choice != '' && first_res != ''){
             var chat = {
                 sender: senderID,
