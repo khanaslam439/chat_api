@@ -59,7 +59,11 @@ export default class Chat extends Component {
                 broadcast_name: 'Lead Generation',
                 modified_at: '30 min ago'
             }
-        ]
+        ],
+        title: '',
+        no_1: '',
+        no_2: '',
+        body: ''
     }
 
     componentWillMount(){
@@ -75,6 +79,38 @@ export default class Chat extends Component {
 
         var objDiv = document.querySelector(".chat-body");
         objDiv.scrollTop = objDiv.scrollHeight;
+    }
+
+    handleSubmit(e){
+        var details = {
+            no_1: this.state.no_1,
+            no_2: this.state.no_2,
+            body: this.state.body 
+        }
+
+        fetch('/api', {
+            method: 'POST',
+            // We convert the React state to JSON and send it as the POST body
+            body: JSON.stringify(details)
+            }).then(function(response) {
+            console.log(response);
+            setTimeout(()=> alert('Broadcast send successfully.'), 1000);
+            return response.json();
+            });
+        e.preventDefault();
+    }
+
+    handleTitle(e){
+        this.setState({ title : e.target.value})
+    }
+    handleNo1(e){
+        this.setState({ no_1 : e.target.value})
+    }
+    handleNo2(e){
+        this.setState({ no_2 : e.target.value})
+    }
+    handleBody(e){
+        this.setState({ body : e.target.value})
     }
 
     render() {
@@ -141,29 +177,29 @@ export default class Chat extends Component {
                         <div className="modal-dialog">
                             <div className="modal-content">
                                 <div className="modal-body p-5">
-                                    <form action="/api" method="post">
+                                    <form onSubmit={this.handleSubmit.bind(this)}>
                                         <div className="mb-3">
                                             <label>Broadcast Title</label>
-                                            <input className="form-control" type="text" id="c_name" name="c_name" />
+                                            <input className="form-control" type="text" id="c_name" name="c_name" onChange={this.handleTitle.bind(this)} />
                                         </div>
 
                                         <div className="mb-3">
                                             <label>Phone 1</label>
-                                            <input className="form-control" type="number" id="no_1" name="no_1" />
+                                            <input className="form-control" type="number" id="no_1" name="no_1" onChange={this.handleNo1.bind(this)} />
                                         </div>
 
                                         <div className="mb-3">
                                             <label>Phone 2</label>
-                                            <input className="form-control" type="number" id="no_2" name="no_2" />
+                                            <input className="form-control" type="number" id="no_2" name="no_2" onChange={this.handleNo2.bind(this)} />
                                         </div>
 
                                         <div className="mb-3">
                                             <label>Messages</label>
-                                            <textarea rows="4" className="form-control" type="text" id="message" name="message" />
+                                            <textarea rows="4" className="form-control" type="text" id="message" name="message" onChange={this.handleBody.bind(this)} />
                                         </div>
 
                                         <button className="btn btn-primary me-2" type="submit">Send Broadcast</button>
-                                        <button className="btn btn-outline-secondary" type="submit">Close</button>
+                                        <button className="btn btn-outline-secondary" data-bs-dismiss="modal" >Close</button>
                                     </form>
                                 </div>
                             </div>

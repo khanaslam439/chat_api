@@ -103,7 +103,6 @@ app.post('/whatsapp', async (req, res) => {
 app.post('/api', function(req,res){
     // PH.phone('whatsapp:+919540378590');
     let body = req.body;
-    console.log(body);
     let recieverID = 'whatsapp:+14155238886';
     let p1 = "whatsapp:+"+body.no_1;
     let p2 = "whatsapp:+"+body.no_2;
@@ -112,8 +111,8 @@ app.post('/api', function(req,res){
     res.json(data)
 })
 
-const path = require('path');  
-app.use(express.static(path.join(__dirname, 'client', 'build')));
+// const path = require('path');  
+// app.use(express.static(path.join(__dirname, 'client', 'build')));
 
 
 const port = process.env.PORT || 5000;
